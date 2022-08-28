@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%; /* 10px */
+
+  --bg-primary: hsl(233, 100%, 97%);
+  --bg-header-primary: hsl(218, 17%, 62%);
+  --bg-header-secondary: hsl(275, 18%, 79%);
+  --bg-span: hsl(312, 91%, 96%);
+
+  --fc-primary: hsl(274, 84%, 12%);
+  --fc-secondary: hsl(0, 0%, 100%);
+  --fc-tertiary: hsl(232, 17%, 35%);
+
+  --ff-primary: 'Staatliches', cursive;
+  --ff-secondary: 'Palanquin', sans-serif;
+
+  --fz-primary: 4.0rem;
+  --fz-secondary: 2.0rem;
+}
+
+body {
+  background-color: var(--bg-primary);
+}
+
+.page {
+  max-width: 38.5rem; /* Deixar resposividade do grid */
+  margin: 0 auto;
+}
+
+header {
+  animation: topdown 700ms ;
+  max-height: 27.9rem;
+  background-color: var(--bg-header-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header img {
+  max-width: 13.7rem;
+  max-height: 13.7rem;
+  margin: 3.2rem 0;
+}
+
+header h1 {
+  background-color: var(--bg-header-secondary);
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2.9rem;
+  font-size: var(--fz-primary);
+  color: var(--fc-secondary);
+  
+  padding: 0.8rem 0;
+  font-family: var(--ff-primary);
+  font-weight: 400;
+  line-height: 3.4rem;
+  text-shadow: 0px 2px 2px;
+  letter-spacing: 0.05em;
+}
+
+main {
+  animation: downtop 700ms backwards;
+  padding: 1.7rem 2.3rem 6.0rem;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+}
+
+main p {
+  max-width: 30.5rem;
+  font-weight: 400;
+  font-family: var(--ff-secondary);
+  font-size: var(--fz-secondary);
+  line-height: 2.0rem;
+  margin-bottom: 6.3rem;
+  font-size: var(--fz-secondary);
+  color: var(--fc-primary);
+  text-align: center;
+}
+
+.card {
+  position: relative;
+}
+
+.card + .card {
+  margin-top: 3.6rem;
+}
+
+.card img { 
+  transition: all 200ms ease;
+  filter: brightness(0.5) saturate(1.5);
+}
+
+.card img:hover {
+  transform: scale(1.1); /*transform scale aumenta a escala.*/
+  opacity: 0.5;
+}
+
+.card h2 {
+  font-family: var(--ff-primary);
+  font-weight: 400;
+  font-size: var(--fz-secondary);
+  line-height: 3.4rem;
+  color: var(--fc-tertiary);
+  text-transform: uppercase;
+  font-size: var(--fz-secondary);
+}
+
+.card h2 span {
+  display: inline-flex;
+  align-items: center;
+
+  max-width: 12.2rem;
+  position: absolute;
+  right: 1.6rem;
+  top: 1.6rem;
+  height: 3.5rem;
+  background-color: var(--bg-span);
+  border-radius: 20px;
+  padding: 1px 2.3rem;
+
+}
+
+@keyframes topdown {
+  0% {
+      opacity: 0;
+      transform: translateY(-450px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(600px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
